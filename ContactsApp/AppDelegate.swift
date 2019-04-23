@@ -17,6 +17,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        let contactView = ContactsListRouter.createModule()
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        let navigation = UINavigationController(rootViewController: contactView)
+        self.window?.rootViewController = navigation
+        self.window?.makeKeyAndVisible()
+
         return true
     }
 
